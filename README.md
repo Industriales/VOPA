@@ -1,4 +1,4 @@
 VOPA
 ====
 
-Use your voice to expand your imagination
+Use your voice to expand your imagination 
