@@ -29,10 +29,10 @@ public class mainVentana extends JFrame {
 		add(panel2);
 		add(panel);
 			 
-		 
+		
 		//visualizar ventana
 		setVisible(true);
-		//setResizable(false);
+		setResizable(false);
 		 
 		// x de la ventana se cierre
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
