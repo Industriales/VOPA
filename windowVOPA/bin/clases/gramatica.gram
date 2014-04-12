@@ -1,0 +1,10 @@
+#JSGF V1.0;
+grammar sentence;
+ 
+public <sentence> =
+[<dato0>]
+[<dato6>];
+
+ 
+<dato0>=left|right|down|up|paint|clean|red|green|blue|yellow|orange|two|three|four|five|six|seven|eight|nine|less;
+<dato6>=more;
