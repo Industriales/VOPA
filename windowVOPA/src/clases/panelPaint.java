@@ -20,7 +20,7 @@ public class panelPaint extends JPanel implements KeyListener, Runnable {
 	public static int x=1, y=1, xx=0, yy=0, ab=0, ar=0, izq=0, der=0;//era int
 	public static Graphics2D g;
 	public String l;
-	boolean dibuja = false, zoom = false;
+	boolean dibuja = false, zoom = false,zoom2=false;
 	public static int[][] matriz = new int[3000][2];//declaramos las matrices para almacenar nuestro dibujo
 	public static int[][] matriz1 = new int[3000][2];
 	public static int[][] matriz2 = new int[3000][2];
@@ -105,7 +105,7 @@ public void Hilo1(){
 		mover = (int) (mover*q);
 		
 		y = (int) (y*q); // calibrar el puntero
-		x = (int) (x*q);
+		//x = (int) (x*q);
 		
 		int j;
 		
@@ -113,7 +113,7 @@ public void Hilo1(){
 			
 			matriz[j][0] = (int) (matriz[j][0]*q);
 			matriz[j][1] = (int) (matriz[j][1]*q);
-			//repaint();
+			repaint();//LO HABIA DEJADO EN COMENTARIO
 			negro=1;
 			zo=1;
 			}
@@ -237,6 +237,150 @@ public void Hilo1(){
 		boton.setBounds(x, y, ancho, largo);
 		
 	}
+	public void zoom2(){	
+		
+		if(zoom2){
+			
+		ancho = (int) (ancho*q);// se multiplica para darle proporcion a las dimensiones y el movimiento del puntero
+		largo = (int) (largo*q);
+		mover = (int) (mover*q);
+		
+		//y = (int) (y*q); // calibrar el puntero
+		//x = (int) (x*q);
+		repaint();
+		x=0;
+		y=0;
+		boton.setBounds(x, y, ancho, largo);
+		int j;
+		
+		for(j=0;j<buffer;j++){
+			
+			matriz[j][0] = (int) (matriz[j][0]*q);
+			matriz[j][1] = (int) (matriz[j][1]*q);
+			//repaint();//LO HABIA DEJADO EN COMENTARIO
+			negro=1;
+			zo=1;
+			}
+		////////////////////////////////demas colores////////////////////
+		for(j=0;j<buffer1;j++){
+			
+			matriz1[j][0] = (int) (matriz1[j][0]*q);
+			matriz1[j][1] = (int) (matriz1[j][1]*q);
+			//repaint();
+			rojo=1;
+			}
+		
+		for(j=0;j<buffer2;j++){
+			
+			matriz2[j][0] = (int) (matriz2[j][0]*q);
+			matriz2[j][1] = (int) (matriz2[j][1]*q);
+			//repaint();
+			verde=1;
+			}
+		
+		for(j=0;j<buffer3;j++){
+			
+			matriz3[j][0] = (int) (matriz3[j][0]*q);
+			matriz3[j][1] = (int) (matriz3[j][1]*q);
+			//repaint();
+			azul=1;
+			}
+		
+		for(j=0;j<buffer4;j++){
+			
+			matriz4[j][0] = (int) (matriz4[j][0]*q);
+			matriz4[j][1] = (int) (matriz4[j][1]*q);
+			//repaint();
+			grgb=1;
+			}
+		
+		for(j=0;j<buffer5;j++){
+			
+			matriz5[j][0] = (int) (matriz5[j][0]*q);
+			matriz5[j][1] = (int) (matriz5[j][1]*q);
+			//repaint();
+		    grgb1=1;
+			}
+		
+		for(j=0;j<buffer6;j++){
+			
+			matriz6[j][0] = (int) (matriz6[j][0]*q);
+			matriz6[j][1] = (int) (matriz6[j][1]*q);
+			//repaint();
+			grgb2=1;
+			}
+		
+		for(j=0;j<buffer7;j++){
+			
+			matriz7[j][0] = (int) (matriz7[j][0]*q);
+			matriz7[j][1] = (int) (matriz7[j][1]*q);
+			//repaint();
+			grgb3=1;
+			}
+		
+		for(j=0;j<buffer8;j++){
+			
+			matriz8[j][0] = (int) (matriz8[j][0]*q);
+			matriz8[j][1] = (int) (matriz8[j][1]*q);
+			//repaint();
+			grgb4=1;
+			}
+		
+		for(j=0;j<buffer9;j++){
+			
+			matriz9[j][0] = (int) (matriz9[j][0]*q);
+			matriz9[j][1] = (int) (matriz9[j][1]*q);
+			//repaint();
+			amarillo=1;
+			}
+		
+		for(j=0;j<buffer10;j++){
+			
+			matriz10[j][0] = (int) (matriz10[j][0]*q);
+			matriz10[j][1] = (int) (matriz10[j][1]*q);
+			//repaint();
+			naranja=1;
+			}
+		
+		for(j=0;j<buffer11;j++){
+			
+			matriz11[j][0] = (int) (matriz11[j][0]*q);
+			matriz11[j][1] = (int) (matriz11[j][1]*q);
+			//repaint();
+			rosa=1;
+			}
+		
+		for(j=0;j<buffer12;j++){
+			
+			matriz12[j][0] = (int) (matriz12[j][0]*q);
+			matriz12[j][1] = (int) (matriz12[j][1]*q);
+			//repaint();
+			cyan=1;
+			}
+		
+		for(j=0;j<buffer13;j++){
+			
+			matriz13[j][0] = (int) (matriz13[j][0]*q);
+			matriz13[j][1] = (int) (matriz13[j][1]*q);
+			//repaint();
+			magenta=1;
+			}
+		
+		for(j=0;j<buffer14;j++){
+			
+			matriz14[j][0] = (int) (matriz14[j][0]*q);
+			matriz14[j][1] = (int) (matriz14[j][1]*q);
+			//repaint();
+			marron=1;
+			}
+		/////////////////////////////////////
+		}
+		zoom2=false;
+		//x=0;
+		//y=0;
+		//boton.setBounds(x, y, ancho, largo);
+		
+	}
 	
 
 /////////////////metodos con el teclado////////////////////////////
@@ -312,8 +456,8 @@ public void Hilo1(){
 					yy=yy+mover;
 					m1=xx;
 					m2=yy;
-					System.out.println("HE PULSADO ABAJO \n");
-					System.out.println("M1 Y M2 ("+m1+","+m2+")" );
+				//	System.out.println("HE PULSADO ABAJO \n");
+					//System.out.println("M1 Y M2 ("+m1+","+m2+")" );
 					ab=1;
 				}
 			
@@ -394,7 +538,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("A")){
-				System.out.println("HE PULSADO A \n");
+				//System.out.println("HE PULSADO A \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz[buffer][0]=xx;
@@ -408,7 +552,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("S")){
-				System.out.println("HE PULSADO S \n");
+				//System.out.println("HE PULSADO S \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				v[0]=xx;
@@ -628,7 +772,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("R")){
-				System.out.println("HE PULSADO R \n");
+				//System.out.println("HE PULSADO R \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz1[buffer1][0]=xx;
@@ -636,11 +780,11 @@ public void Hilo1(){
 				n1=1+n1;
 				buffer1=n1; 
 				rojo=1;
-				System.out.println("ROJO ES"+rojo);
+				//System.out.println("ROJO ES"+rojo);
 			}
 			
 			else if(l.equals("G")){
-				System.out.println("HE PULSADO G \n");
+			//	System.out.println("HE PULSADO G \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz2[buffer2][0]=xx;
@@ -651,7 +795,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("B")){
-				System.out.println("HE PULSADO B \n");
+			//	System.out.println("HE PULSADO B \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz3[buffer3][0]=xx;
@@ -662,7 +806,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("H")){
-				System.out.println("HE PULSADO H \n");
+				//System.out.println("HE PULSADO H \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz4[buffer4][0]=xx;
@@ -673,7 +817,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("J")){
-				System.out.println("HE PULSADO J \n");
+			//	System.out.println("HE PULSADO J \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz5[buffer5][0]=xx;
@@ -683,7 +827,7 @@ public void Hilo1(){
 				grgb1=1;
 			}
 			else if(l.equals("K")){
-				System.out.println("HE PULSADO K \n");
+			//	System.out.println("HE PULSADO K \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz6[buffer6][0]=xx;
@@ -694,7 +838,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("L")){
-				System.out.println("HE PULSADO L \n");
+			//	System.out.println("HE PULSADO L \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz7[buffer7][0]=xx;
@@ -705,7 +849,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("N")){
-				System.out.println("HE PULSADO N \n");
+			//	System.out.println("HE PULSADO N \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz8[buffer8][0]=xx;
@@ -716,7 +860,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("Y")){
-				System.out.println("HE PULSADO Y \n");
+			//	System.out.println("HE PULSADO Y \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz9[buffer9][0]=xx;
@@ -727,7 +871,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("O")){
-				System.out.println("HE PULSADO O \n");
+				//System.out.println("HE PULSADO O \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz10[buffer10][0]=xx;
@@ -738,7 +882,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("P")){
-				System.out.println("HE PULSADO P \n");
+				//System.out.println("HE PULSADO P \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz11[buffer11][0]=xx;
@@ -749,7 +893,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("C")){
-				System.out.println("HE PULSADO C \n");
+			//	System.out.println("HE PULSADO C \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz12[buffer12][0]=xx;
@@ -760,7 +904,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("M")){
-				System.out.println("HE PULSADO M \n");
+				//System.out.println("HE PULSADO M \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz8[buffer8][0]=xx;
@@ -771,7 +915,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("V")){
-				System.out.println("HE PULSADO V \n");
+			//	System.out.println("HE PULSADO V \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz14[buffer14][0]=xx;
@@ -1055,9 +1199,10 @@ public void Hilo1(){
 	
 	/////////////////////////////////////////////////////
 	public void paintComponent(Graphics g){
-			System.out.println("ha entrado a paintComponent");
-			System.out.println("EL VALOR DE VERDE ES_ "+verde);
+			//System.out.println("ha entrado a paintComponent");
+			//System.out.println("EL VALOR DE VERDE ES_ "+verde);
 			g.setColor(Color.black);
+			//repaint();
 				super.paintComponent(g);
 				g = (Graphics2D) g;
 				
@@ -1066,13 +1211,28 @@ public void Hilo1(){
 					if(negro==1)
 					{
 						
-						for(int j=0;j<buffer;j++)
+						//System.out.println("deberia pintar");
+						g.setColor(Color.black);
+						xx=matriz[buffer][0];
+						yy=matriz[buffer][1];
+						g.fillRect(xx,yy, ancho, largo);
+						//dibuja=false;
+						//NUEVOOOOOOOOO
+					for(int j=0;j<buffer;j++)
+						{
+							g.setColor(Color.black);
+							xx = matriz[j][0];
+							yy = matriz[j][1];		
+							g.fillRect(xx,yy, ancho, largo);
+						}	
+						negro=0;
+						/*for(int j=0;j<buffer;j++)
 						{
 						g.setColor(Color.black);
 						xx = matriz[j][0];
 						yy = matriz[j][1];				
 						g.fillRect(xx,yy, ancho, largo);
-						}	
+						}*/
 				zo=0;
 					}
 					if(rojo==1)
@@ -1250,11 +1410,11 @@ public void Hilo1(){
 					if(dibuja){
 						if(negro==1)
 						{
-							System.out.println("deberia pintar");
+							//System.out.println("deberia pintar");
 							g.setColor(Color.black);
-							xx=matriz[buffer][0];
-							yy=matriz[buffer][1];
-							g.fillRect(xx,yy, ancho, largo);
+							//xx=matriz[buffer][0];
+							//yy=matriz[buffer][1];
+							//g.fillRect(xx,yy, ancho, largo);
 							//dibuja=false;
 							//NUEVOOOOOOOOO
 						for(int j=0;j<buffer;j++)
@@ -1275,7 +1435,7 @@ public void Hilo1(){
 					g.setColor(Color.red);
 					xx=matriz1[buffer1][0];
 					yy=matriz1[buffer1][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer1;j++)
@@ -1289,20 +1449,20 @@ public void Hilo1(){
 				}
 					
 				if(verde==1){
-					System.out.println("deberia pintar");
+					//System.out.println("deberia pintar");
 					g.setColor(Color.green);
 					xx=matriz2[buffer2][0];
 					yy=matriz2[buffer2][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer2;j++)
 					{
-					System.out.println("Buffer es dentro"+buffer2);
+					//System.out.println("Buffer es dentro"+buffer2);
 					g.setColor(Color.green);
 					xx = matriz2[j][0];
 					yy = matriz2[j][1];		
-					System.out.println("("+xx+","+yy+")");
+					//System.out.println("("+xx+","+yy+")");
 					g.fillRect(xx,yy, ancho, largo);
 					}	
 					verde=0;
@@ -1312,7 +1472,7 @@ public void Hilo1(){
 					g.setColor(Color.blue);
 					xx=matriz3[buffer3][0];
 					yy=matriz3[buffer3][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer3;j++)
@@ -1320,7 +1480,7 @@ public void Hilo1(){
 					g.setColor(Color.blue);
 					xx = matriz3[j][0];
 					yy = matriz3[j][1];		
-					System.out.println("("+xx+","+yy+")");
+					//System.out.println("("+xx+","+yy+")");
 					g.fillRect(xx,yy, ancho, largo);
 					}	
 					azul=0;
@@ -1330,7 +1490,7 @@ public void Hilo1(){
 					g.setColor(colorGris15);
 					xx=matriz4[buffer4][0];
 					yy=matriz4[buffer4][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer4;j++)
@@ -1348,7 +1508,7 @@ public void Hilo1(){
 					g.setColor(colorGris30);
 					xx=matriz5[buffer5][0];
 					yy=matriz5[buffer5][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer5;j++)
@@ -1365,7 +1525,7 @@ public void Hilo1(){
 					g.setColor(colorGris45);
 					xx=matriz6[buffer6][0];
 					yy=matriz6[buffer6][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer6;j++)
@@ -1382,7 +1542,7 @@ public void Hilo1(){
 					g.setColor(colorGris60);
 					xx=matriz7[buffer7][0];
 					yy=matriz7[buffer7][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer7;j++)
@@ -1399,7 +1559,7 @@ public void Hilo1(){
 					g.setColor(colorGris75);
 					xx=matriz8[buffer8][0];
 					yy=matriz8[buffer8][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer8;j++)
@@ -1416,7 +1576,7 @@ public void Hilo1(){
 					g.setColor(Color.yellow);
 					xx=matriz9[buffer9][0];
 					yy=matriz9[buffer9][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer9;j++)
@@ -1433,7 +1593,7 @@ public void Hilo1(){
 					g.setColor(Color.orange);
 					xx=matriz10[buffer10][0];
 					yy=matriz10[buffer10][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer10;j++)
@@ -1451,7 +1611,7 @@ public void Hilo1(){
 					g.setColor(colorRosaos);
 					xx=matriz11[buffer11][0];
 					yy=matriz11[buffer11][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer11;j++)
@@ -1468,7 +1628,7 @@ public void Hilo1(){
 					g.setColor(Color.cyan);
 					xx=matriz12[buffer12][0];
 					yy=matriz12[buffer12][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer12;j++)
@@ -1485,7 +1645,7 @@ public void Hilo1(){
 					g.setColor(Color.magenta);
 					xx=matriz13[buffer13][0];
 					yy=matriz13[buffer13][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer13;j++)
@@ -1500,9 +1660,9 @@ public void Hilo1(){
 				
 				if(marron==1){
 					g.setColor(colorMarron);
-					xx=matriz11[buffer14][0];
-					yy=matriz11[buffer14][1];
-					g.fillRect(xx,yy, ancho, largo);
+					//xx=matriz11[buffer14][0];
+					//yy=matriz11[buffer14][1];
+					//g.fillRect(xx,yy, ancho, largo);
 					//dibuja=false;
 					//NUEVOOOOOOOOO
 					for(int j=0;j<buffer14;j++)
@@ -1828,11 +1988,11 @@ public void Hilo1(){
 				
 		//l = e.getKeyText(e.getKeyCode());
 		l=e;
-		System.out.println("estoy en panelpaint");
+		//System.out.println("estoy en panelpaint");
 			
 		
 		if(l.equals("up")){
-				System.out.println("estoy en up");
+			//	System.out.println("estoy en up");
 			v[0]=boton.getX();
 			v[1]=boton.getY();
 			xx=v[0];
@@ -1869,7 +2029,7 @@ public void Hilo1(){
 			}
 
 			else if(l.equals("down")){
-				System.out.println("estoy en down");
+			//	System.out.println("estoy en down");
 
 			v[0]=boton.getX();
 			v[1]=boton.getY();
@@ -1908,7 +2068,7 @@ public void Hilo1(){
 			
 			}
 			else if(l.equals("two")){
-				System.out.println("estoy en five");
+				//System.out.println("estoy en five");
 
 			v[0]=boton.getX();
 			v[1]=boton.getY();
@@ -1943,7 +2103,7 @@ public void Hilo1(){
 			
 			}
 			else if(l.equals("three")){
-				System.out.println("estoy en five");
+			//	System.out.println("estoy en five");
 
 			v[0]=boton.getX();
 			v[1]=boton.getY();
@@ -1978,7 +2138,7 @@ public void Hilo1(){
 			
 			}
 			else if(l.equals("four")){
-				System.out.println("estoy en five");
+				//System.out.println("estoy en five");
 
 			v[0]=boton.getX();
 			v[1]=boton.getY();
@@ -2013,7 +2173,7 @@ public void Hilo1(){
 			
 			}
 			else if(l.equals("five")){
-				System.out.println("estoy en five");
+				//System.out.println("estoy en five");
 
 			v[0]=boton.getX();
 			v[1]=boton.getY();
@@ -2048,7 +2208,7 @@ public void Hilo1(){
 			
 			}
 			else if(l.equals("six")){
-				System.out.println("estoy en five");
+				//System.out.println("estoy en five");
 
 			v[0]=boton.getX();
 			v[1]=boton.getY();
@@ -2083,7 +2243,7 @@ public void Hilo1(){
 			
 			}
 			else if(l.equals("seven")){
-				System.out.println("estoy en five");
+			//	System.out.println("estoy en five");
 
 			v[0]=boton.getX();
 			v[1]=boton.getY();
@@ -2118,7 +2278,7 @@ public void Hilo1(){
 			
 			}
 			else if(l.equals("right")){
-			System.out.println("estoy en right");
+			//System.out.println("estoy en right");
 
 			v[0]=boton.getX();
 			v[1]=boton.getY();
@@ -2157,7 +2317,7 @@ public void Hilo1(){
 			}
 
 			else if(l.equals("left")){
-			System.out.println("estoy en left");
+		//	System.out.println("estoy en left");
 			v[0]=boton.getX();
 			v[1]=boton.getY();
 			xx=v[0];
@@ -2194,7 +2354,7 @@ public void Hilo1(){
 			}
 			//ponia A
 			else if(l.equals("paint")){
-				System.out.println("He dicho pintar black \n");
+				//System.out.println("He dicho pintar black \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz[buffer][0]=xx;
@@ -2203,13 +2363,13 @@ public void Hilo1(){
 				buffer=n;
 				negro=1;
 				dibuja=true;
-				System.out.println("Buffer es fuera"+buffer);
+				//System.out.println("Buffer es fuera"+buffer);
 					//NUEVOOOOOOOOO
 					
 			}
 			
 			else if(l.equals("S")){
-				System.out.println("HE PULSADO S \n");
+				//System.out.println("HE PULSADO S \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				v[0]=xx;
@@ -2410,9 +2570,9 @@ public void Hilo1(){
 					if(u<2 && u>=0){
 						u++;
 						q=(float) 0.5;
-						zoom=true;
+						zoom2=true;
 						repaint();
-						zoom();
+						zoom2();
 					}
 				}
 			}
@@ -2423,15 +2583,15 @@ public void Hilo1(){
 					if(u<3){
 						u--;
 						q=2;
-						zoom=true;
+						zoom2=true;
 						repaint();
-						zoom();
+						zoom2();
 						}
 					}
 			}
 			
 			else if(l.equals("red")){
-				System.out.println("HE PULSADO R \n");
+			//	System.out.println("HE PULSADO R \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz1[buffer1][0]=xx;
@@ -2443,7 +2603,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("green")){
-				System.out.println("HE PULSADO G \n");
+			//	System.out.println("HE PULSADO G \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz2[buffer2][0]=xx;
@@ -2455,7 +2615,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("blue")){
-				System.out.println("HE PULSADO B \n");
+			//	System.out.println("HE PULSADO B \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz3[buffer3][0]=xx;
@@ -2466,7 +2626,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("H")){
-				System.out.println("HE PULSADO H \n");
+			//	System.out.println("HE PULSADO H \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz4[buffer4][0]=xx;
@@ -2477,7 +2637,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("J")){
-				System.out.println("HE PULSADO J \n");
+			//	System.out.println("HE PULSADO J \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz5[buffer5][0]=xx;
@@ -2487,7 +2647,7 @@ public void Hilo1(){
 				grgb1=1;
 			}
 			else if(l.equals("K")){
-				System.out.println("HE PULSADO K \n");
+				//System.out.println("HE PULSADO K \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz6[buffer6][0]=xx;
@@ -2498,7 +2658,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("L")){
-				System.out.println("HE PULSADO L \n");
+			//	System.out.println("HE PULSADO L \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz7[buffer7][0]=xx;
@@ -2509,7 +2669,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("N")){
-				System.out.println("HE PULSADO N \n");
+			//	System.out.println("HE PULSADO N \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz8[buffer8][0]=xx;
@@ -2520,7 +2680,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("yellow")){
-				System.out.println("HE PULSADO Y \n");
+			//	System.out.println("HE PULSADO Y \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz9[buffer9][0]=xx;
@@ -2531,7 +2691,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("orange")){
-				System.out.println("HE PULSADO O \n");
+			//	System.out.println("HE PULSADO O \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz10[buffer10][0]=xx;
@@ -2542,7 +2702,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("P")){
-				System.out.println("HE PULSADO P \n");
+				//System.out.println("HE PULSADO P \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz11[buffer11][0]=xx;
@@ -2553,7 +2713,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("C")){
-				System.out.println("HE PULSADO C \n");
+			//	System.out.println("HE PULSADO C \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz12[buffer12][0]=xx;
@@ -2564,7 +2724,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("M")){
-				System.out.println("HE PULSADO M \n");
+			//	System.out.println("HE PULSADO M \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz13[buffer13][0]=xx;
@@ -2575,7 +2735,7 @@ public void Hilo1(){
 			}
 			
 			else if(l.equals("V")){
-				System.out.println("HE PULSADO V \n");
+			//	System.out.println("HE PULSADO V \n");
 				xx = boton.getX();
 				yy = boton.getY();
 				matriz14[buffer14][0]=xx;
@@ -2599,6 +2759,8 @@ public void Hilo1(){
 				
 					}
 				}
+				contador=0;
+				arriba=0;
 				boton.setBounds(m1,m2, ancho, largo);
 				ar=0;
 			}
@@ -2613,6 +2775,8 @@ public void Hilo1(){
 					ab=0;
 					}
 				}
+				contador=0;
+				abajo=0;
 				boton.setBounds(m1, m2, ancho, largo);
 				ab=0;
 			}
@@ -2627,6 +2791,8 @@ public void Hilo1(){
 				
 					}
 				}
+				contador=0;
+				izquierda=0;
 				boton.setBounds(m1,m2, ancho, largo);
 				izq=0;
 			}
@@ -2641,6 +2807,8 @@ public void Hilo1(){
 				
 					}
 				}
+				derecha=0;
+				contador=0;
 				boton.setBounds(m1,m2, ancho, largo);
 				der=0;
 			}

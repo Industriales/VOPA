@@ -80,7 +80,7 @@ public void reconocerVozz(){
 	
 	public void opciones (String re){
 		
-		System.out.println("dentro de opciones");
+		//System.out.println("dentro de opciones");
 		panelPaint con = new panelPaint();
                 	con.keyPressed(re);
                 

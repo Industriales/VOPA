@@ -13,7 +13,7 @@ import javax.swing.JTextArea;
 public class panelOpciones extends JPanel{
 	
 	
-	private static JLabel ordenador, usuario, textord, textusu, colores, A,D,red,green,blue, H, J, K, L,N, yellow, orange,P,C,M,V,rose,cyan,magenta,brown;
+	private static JLabel ordenador, usuario, textord, textusu, colores, A,S,red,green,blue, H, J, K, L,N, yellow, orange,P,C,M,V,rose,cyan,magenta,brown;
 	public static JPanel areaord, areausu, areablack, areagrey, areagrey1, areagrey2, areagrey3, areagrey4, areawhite,areared,areaorange,areayellow,areablue,areagreen,arearose,areacyan,areamagenta,areabrown;
 	
 	Color colorGris15=new Color(38, 38, 38); // Color (R,G,B)
@@ -48,10 +48,10 @@ public class panelOpciones extends JPanel{
 				 areausu.setBounds(25, 200, 150, 50);
 				 
 				// Para escribir el texto sin necesidad de usar el cursor (texto fijo)
-				 textord = new JLabel("¿Qué deseas hacer?");
+				 textord = new JLabel("¿What do you want?");
 				 textord.setBounds(28, 50, 150, 50);
 				 
-				 textusu = new JLabel("Dibujar!!!");
+				 textusu = new JLabel("PAINT!!!");
 				 textusu.setBounds(28, 200, 150, 50);
 				 
 				 
@@ -111,9 +111,9 @@ public class panelOpciones extends JPanel{
 				 areagrey4.setBounds(50, 595, 135, 10);
 				 areagrey4.setBackground(colorGris75);
 				 
-				 D = new JLabel("D");
-				 D.setBounds(10, 610, 150, 10);
-				 D.setBackground(Color.black);
+				 S = new JLabel("S");
+				 S.setBounds(10, 610, 150, 10);
+				 S.setBackground(Color.black);
 				 
 				 areawhite = new JPanel();
 				 areawhite.setBounds(50, 610, 135, 10);
@@ -204,7 +204,7 @@ public class panelOpciones extends JPanel{
 			     add(K);
 			     add(L);
 			     add(M);
-			     add(D);
+			     add(S);
 			     add(red);
 			     add(blue);
 			     add(green);
