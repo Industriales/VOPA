@@ -40,7 +40,7 @@ public class panelPaint extends JPanel implements KeyListener, Runnable {
 	int v[]=new int[2];
 	public static int ancho=20, largo=20, mover=20, zo=0, variable =0;//era int
 	public static int rojo=0, verde=0, azul=0, amarillo=0, naranja=0, rosa=0, magenta=0, cyan=0, marron=0, negro=0;
-	int grgb=0, grgb1=0, grgb2=0, grgb3=0, grgb4=0;
+	public static int grgb=0, grgb1=0, grgb2=0, grgb3=0, grgb4=0;
 	public static float q=1;
 	
 ////////////////Escala de gris /////////////////////
@@ -2325,17 +2325,19 @@ public void Hilo1(){
 				n3=1+n3;
 				buffer3=n3; 
 				azul=1;
+				dibuja=true;
 			}
 			
 			else if(l.equals("eight")){
 
-					xx = boton.getX();
-					yy = boton.getY();
-					matriz4[buffer4][0]=xx;
-					matriz4[buffer4][1]=yy;
-					n4=1+n4;
-					buffer4=n4;
-					grgb=1;
+				xx = boton.getX();
+				yy = boton.getY();
+				matriz4[buffer4][0]=xx;
+				matriz4[buffer4][1]=yy;
+				n4=1+n4;
+				buffer4=n4; 
+				grgb=1;
+				dibuja=true;
 			}
 			
 			else if(l.equals("nine")){
@@ -2346,6 +2348,7 @@ public void Hilo1(){
 				n5=1+n5;
 				buffer5=n5;
 				grgb1=1;
+				dibuja=true;
 			}
 			else if(l.equals("ten")){
 				xx = boton.getX();
@@ -2355,6 +2358,7 @@ public void Hilo1(){
 				n6=1+n6;
 				buffer6=n6;
 				grgb2=1;
+				dibuja=true;
 			}
 			
 			else if(l.equals("eleven")){
@@ -2365,6 +2369,7 @@ public void Hilo1(){
 				n7=1+n7;
 				buffer7=n7;
 				grgb3=1;
+				dibuja=true;
 			}
 			
 			else if(l.equals("twelve")){
@@ -2375,6 +2380,7 @@ public void Hilo1(){
 				n8=1+n8;
 				buffer8=n8;
 				grgb4=1;
+				dibuja=true;
 			}
 		
 			
@@ -2386,6 +2392,7 @@ public void Hilo1(){
 				n9=1+n9;
 				buffer9=n9;
 				amarillo=1;
+				dibuja=true;
 			}
 			
 			else if(l.equals("orange")){
@@ -2396,6 +2403,7 @@ public void Hilo1(){
 				n10=1+n10;
 				buffer10=n10;
 				naranja=1;
+				dibuja=true;
 			}
 			
 			else if(l.equals("rose")){
@@ -2406,6 +2414,7 @@ public void Hilo1(){
 				n11=1+n11;
 				buffer11=n11;
 				rosa=1;
+				dibuja=true;
 			}
 			
 			else if(l.equals("cyan")){
@@ -2416,6 +2425,7 @@ public void Hilo1(){
 				n12=1+n12;
 				buffer12=n12;
 				cyan=1;
+				dibuja=true;
 			}
 			
 			else if(l.equals("magenta")){
@@ -2426,6 +2436,7 @@ public void Hilo1(){
 				n13=1+n13;
 				buffer13=n13;
 				magenta=1;
+				dibuja=true;
 			}
 			
 			else if(l.equals("brown")){
@@ -2436,8 +2447,9 @@ public void Hilo1(){
 				n14=1+n14;
 				buffer14=n14;
 				marron=1;
+				dibuja=true;
 			}
-			
+
 			
 			/////////////////visualizar el puntero///////////////////////
 		
@@ -2449,10 +2461,9 @@ public void Hilo1(){
 					{
 					m2=m2-mover;	
 					boton.setBounds(m1,m2, ancho, largo);
-				
 					}
 				}
-				contador=0;
+
 				arriba=0;
 				boton.setBounds(m1,m2, ancho, largo);
 				ar=0;
@@ -2467,6 +2478,7 @@ public void Hilo1(){
 					boton.setBounds(m1, m2, ancho, largo);
 					ab=0;
 					}
+					
 				}
 				contador=0;
 				abajo=0;
@@ -2480,8 +2492,7 @@ public void Hilo1(){
 					for(int i=0;i<contador;i++)
 					{
 					m1=m1-mover;	
-					boton.setBounds(m1,m2, ancho, largo);
-				
+					boton.setBounds(m1,m2, ancho, largo);			
 					}
 				}
 				contador=0;
@@ -2496,8 +2507,7 @@ public void Hilo1(){
 					for(int i=0;i<contador;i++)
 					{
 					m1=m1+mover;	
-					boton.setBounds(m1,m2, ancho, largo);
-				
+					boton.setBounds(m1,m2, ancho, largo);	
 					}
 				}
 				derecha=0;
@@ -2509,5 +2519,6 @@ public void Hilo1(){
 		/////////////////////////////////////////////////////////////////////////
 		
 	}
+
 	
 }

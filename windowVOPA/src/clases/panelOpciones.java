@@ -23,6 +23,7 @@ public class panelOpciones extends JPanel{
 	Color colorGris75=new Color(191, 191, 191);
 	Color colorRosaos=new Color(255, 20, 147);
 	Color colorMarron=new Color(153, 76, 0);
+	Color colorNaranja=new Color(255,128,0);
 	
 	public panelOpciones(){
 		
@@ -185,7 +186,7 @@ public class panelOpciones extends JPanel{
 				 
 				 areaorange = new JPanel();
 				 areaorange.setBounds(140, 665, 40, 10);
-				 areaorange.setBackground(Color.orange);
+				 areaorange.setBackground(colorNaranja);
 				 
 				 rose = new JLabel("Rose");
 				 rose.setBounds(90, 680, 150, 10);
@@ -329,7 +330,7 @@ public class panelOpciones extends JPanel{
 				 
 				 areaO = new JPanel();
 				 areaO.setBounds(30, 665, 40, 10);
-				 areaO.setBackground(Color.orange);
+				 areaO.setBackground(colorNaranja);
 				 
 				 Z = new JLabel("Z");
 				 Z.setBounds(10, 680, 150, 10);
@@ -425,6 +426,7 @@ public class panelOpciones extends JPanel{
 			     add(areaR);
 			     add(areaB);
 			     add(areaG);
+			     add(areaO);
 			     add(areaY);
 			     add(areaS);
 			     add(areaRO);
