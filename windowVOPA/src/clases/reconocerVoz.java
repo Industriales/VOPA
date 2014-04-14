@@ -44,25 +44,22 @@ public void reconocerVozz(){
           
         	System.out.println("Error, microfono no encontrado");
             recognizer.deallocate();
-            //System.exit(1);
         }
 
         System.out.println("A la espera de comandos de voz:");
         
-        // loop the recognition until the programm exits.
+        // Bucle para reconocimiento voz
         while (true) {
 
             Result result = recognizer.recognize();
 
             if (result != null) {
                 String resultText = result.getBestFinalResultNoFiller();
-               // panelPaint con = new panelPaint();//llamas a panel paint
                 String e = resultText;//declara la variable que vas a pasar
 				
                 
                 if(!resultText.equalsIgnoreCase("Open Note Pad") && !resultText.equalsIgnoreCase("")){
                 	System.out.println("Comando: " + resultText);
-                //	con.condiciones(e);	//pasar a al metodo condiciones de panelPaint la variable e
                 	opciones(e);
                 }
                 else{

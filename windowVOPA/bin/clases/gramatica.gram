@@ -6,5 +6,5 @@ public <sentence> =
 [<dato6>];
 
  
-<dato0>=left|right|down|up|paint|clean|red|green|blue|yellow|orange|two|three|four|five|six|seven|eight|nine|less|less;
+<dato0>=left|right|down|up|paint|clean|red|green|blue|yellow|orange|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|less|gray|brown|cyan|magenta;
 <dato6>=more;
